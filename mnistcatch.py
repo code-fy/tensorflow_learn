@@ -12,8 +12,11 @@ def ministdata():
     # print(test_data_len)
     return train_data_x, train_data_y, x_test, y_test
 
-train_x, tarin_y, test_x, test_y = ministdata()
-print(train_x[0],tarin_y[0])
+# train_x, tarin_y, test_x, test_y = ministdata()
+# print(train_x[0],tarin_y[0])
 
+def maren(person):
 
+    print(person + "is a small dog")
 
+maren("coahongyan")

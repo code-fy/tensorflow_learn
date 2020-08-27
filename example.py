@@ -45,3 +45,4 @@ with tf.compat.v1.Session() as sess:
             print("After %d training step(s), cross entropy on all data is %g" % (i, total_cross_entropy))
     print(sess.run(w1))
     print(sess.run(w2))
+print("怎么回事")
