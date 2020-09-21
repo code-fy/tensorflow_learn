@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-
+tf.estimator
 tf.compat.v1.disable_eager_execution()
 # 定义数据batch的大小
 batch_size = 8
