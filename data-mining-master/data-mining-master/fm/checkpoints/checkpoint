@@ -1,0 +1,6 @@
+model_checkpoint_path: "model-70500"
+all_model_checkpoint_paths: "model-68500"
+all_model_checkpoint_paths: "model-69000"
+all_model_checkpoint_paths: "model-69500"
+all_model_checkpoint_paths: "model-70000"
+all_model_checkpoint_paths: "model-70500"
