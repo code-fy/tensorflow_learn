@@ -29,6 +29,18 @@ TRAINING_STEPS = 8000
 # 滑动平均衰减率
 MOVING_AVGRAGE_DECAY = 0.99
 
+def interence1(input_tensor, reuse=False):
+    with tf.variable_scope('layer1', reuse=reuse):
+        weights = tf.get_variable("weights", [INPUT_NODE, LAYER1_NODE],initializer=tf.truncated_normal(stddev=0.1))
+        biase = tf.get_variable("biases", [LAYER1_NODE],initializer=tf.constant_initializer(0.0))
+        layer1 = tf.nn.relu(tf.matmul(input_tensor,weights) + biase)
+
+    with tf.variable_scope('layer2', reuse=reuse):
+        weights = tf.get_variable("weights", [INPUT_NODE, LAYER1_NODE],initializer=tf.truncated_normal(stddev=0.1))
+        biase = tf.get_variable("biases", [LAYER1_NODE],initializer=tf.constant_initializer(0.0))
+        layer2 = tf.matmul(layer1,weights) + biase
+    return layer2;
+
 def inference(input_tensor, avg_class, weight1, biases1, weight2, biases2):
     if avg_class is None:
         layer1 = tf.nn.relu(tf.matmul(input_tensor, weight1) + biases1)

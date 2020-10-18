@@ -40,6 +40,11 @@ class DSSM(EasyRecModel):
         deep_fea = tf.layers.dense(inputs=deep_fea, units=unit,
                                    kernel_regularizer=self._l2_reg,
                                    name='dnn_%d' % i)
+        # deep_fea = tf.layers.dense(inputs=deep_fea, units=unit,
+        #                            kernel_initializer=tf.truncated_normal_initializer(0,0.1),
+        #                            kernel_regularizer=self._l2_reg,
+        #                            name='dnn_%d' % i)
+
         deep_fea = tf.layers.batch_normalization(deep_fea,
                                                  training=self._is_training,
                                                  trainable=True, name='dnn_%d/bn' % i)

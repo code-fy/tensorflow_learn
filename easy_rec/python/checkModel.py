@@ -18,8 +18,9 @@ with graph.as_default():
     with tf.Session(config=session_config) as sess:
         meta_graph_def = tf.saved_model.loader.load(
           sess, [tf.saved_model.tag_constants.SERVING], 
-          '/Users/gaoyue/Documents/展心展力/deepfm上线/model/1602739558/'
+          # '/Users/gaoyue/Documents/展心展力/deepfm上线/model/1602739558/'
           #'/Users/dawn/Documents/极光/shuangta/savemodel_small/'
+            '/Users/hycao/tensorflow_learn/path/to/model'
           )
         
         signature_def = meta_graph_def.signature_def[signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY]
