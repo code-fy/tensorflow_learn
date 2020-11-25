@@ -2,6 +2,9 @@ import os
 import sys
 import tensorflow as tf
 import logging
+
+from fm.util import load_dataset
+
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s',level=logging.INFO)
 import numpy as np
 import argparse
