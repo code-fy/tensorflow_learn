@@ -39,7 +39,7 @@ def interence1(input_tensor, reuse=False):
         weights = tf.get_variable("weights", [INPUT_NODE, LAYER1_NODE],initializer=tf.truncated_normal(stddev=0.1))
         biase = tf.get_variable("biases", [LAYER1_NODE],initializer=tf.constant_initializer(0.0))
         layer2 = tf.matmul(layer1,weights) + biase
-    return layer2;
+    return layer2
 
 def inference(input_tensor, avg_class, weight1, biases1, weight2, biases2):
     if avg_class is None:
@@ -95,5 +95,6 @@ def main(argv=None):
 
 if __name__ == '__main__':
     tf.app.run()
+    print("over train")
 
 
